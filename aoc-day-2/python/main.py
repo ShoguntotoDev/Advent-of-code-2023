@@ -1,7 +1,7 @@
 id_sum = 0
 power_sum = 0
 
-with open("input.txt") as file:
+with open("./aoc-day-2/javascript/input.txt") as file:
     for i, line in enumerate(file):
         handfuls = [
             [
