@@ -3,7 +3,7 @@ const fs = require('fs');
 
 // Lecture du fichier d'entrée et traitement des lignes
 const input = fs.readFileSync('input.txt', 'utf8')
-  .split(os.EOL)  // Séparation des lignes en utilisant le séparateur de ligne spécifique à l'OS
+  .split(os.EOL)
   .map(l => l.split(' ').map(x => +x));  // Conversion des nombres dans chaque ligne en nombres
 
 // Fonction pour trouver le prochain élément d'une séquence
@@ -18,10 +18,10 @@ const findNext = seq => {
     current = next;
   }
 
-  // Calcul de la somme des derniers éléments de chaque séquence générée
+  // Calcul de la somme des premiers éléments de chaque séquence générée
   let sum = 0;
   for (let i = sequences.length - 1; i >= 0; i--) {
-    sum += sequences[i].at(-1);
+    sum = sequences[i].at(0) - sum;
   }
 
   return sum;
